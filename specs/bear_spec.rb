@@ -7,39 +7,39 @@ require_relative("../river.rb")
 
 class BearTest < Minitest::Test
 
-def setup
-  @bear = Bear.new("Yogi")
-  @river = River.new("Danube")
-  @fish1 = Fish.new("John")
-  @fish2 = Fish.new("Paul")
-  @fish3 = Fish.new("George")
-  @fish4 = Fish.new("Ringo")
-end
+  def setup
+    @bear = Bear.new("Yogi")
+    @river = River.new("Danube")
+    @fish1 = Fish.new("John")
+    @fish2 = Fish.new("Paul")
+    @fish3 = Fish.new("George")
+    @fish4 = Fish.new("Ringo")
+  end
 
 
-def test_has_name
-  assert_equal("Yogi", @bear.name)
-end
+  def test_has_name
+    assert_equal("Yogi", @bear.name)
+  end
 
-def test_catch_fish
-  @river.take_fish(@fish1)
-  @river.take_fish(@fish2)
-  @river.take_fish(@fish3)
-  @river.take_fish(@fish4)
-  @bear.catch_fish(@river, 2)
-  assert_equal(2, @bear.stomach.length)
-  assert_equal(2, @river.school.length)
-end
+  def test_catch_fish
+    @river.take_fish(@fish1)
+    @river.take_fish(@fish2)
+    @river.take_fish(@fish3)
+    @river.take_fish(@fish4)
+    @bear.catch_fish(@river, 2)
+    assert_equal(2, @bear.stomach.length)
+    assert_equal(2, @river.school.length)
+  end
 
-def test_food_count
-  @river.take_fish(@fish1)
-  @river.take_fish(@fish2)
-  @river.take_fish(@fish3)
-  @river.take_fish(@fish4)
-  @bear.catch_fish(@river, 2)
-  assert_equal(2, @bear.food_count)
+  def test_food_count
+    @river.take_fish(@fish1)
+    @river.take_fish(@fish2)
+    @river.take_fish(@fish3)
+    @river.take_fish(@fish4)
+    @bear.catch_fish(@river, 2)
+    assert_equal(2, @bear.food_count)
 
-end
+  end
 
 end
 

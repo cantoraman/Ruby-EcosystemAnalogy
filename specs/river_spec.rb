@@ -29,12 +29,19 @@ class RiverTest < Minitest::Test
   end
 
   def test_give_fish
-      @river.take_fish(@fish1)
-      @river.take_fish(@fish2)
-      @river.take_fish(@fish3)
-      @river.take_fish(@fish4)
-      fish_taken=@river.give_fish(2)
-      assert_equal(2, @river.school.length)
+    @river.take_fish(@fish1)
+    @river.take_fish(@fish2)
+    @river.take_fish(@fish3)
+    @river.take_fish(@fish4)
+    fish_taken=@river.give_fish(2)
+    assert_equal(2, @river.school.length)
+  end
+
+  def test_fish_count
+    @river.take_fish(@fish1)
+    @river.take_fish(@fish2)
+    @river.take_fish(@fish3)
+    assert_equal(3, @river.fish_count)
   end
 
 end
