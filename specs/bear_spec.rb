@@ -7,7 +7,10 @@ require_relative("../river.rb")
 
 class BearTest < Minitest::Test
 
-
+def test_has_name
+  bear = Bear.new("Yogi")
+  assert_equal("Yogi", bear.name)
+end
 
 
 
