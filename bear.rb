@@ -17,6 +17,7 @@ class Bear
 
   def roar
     puts "ROAAAR!!!"
+    system('say "beep"')
   end
 
   def food_count

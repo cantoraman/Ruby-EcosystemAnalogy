@@ -41,8 +41,15 @@ class BearTest < Minitest::Test
 
   end
 
-end
+  def test_roar
+    @bear.roar
+  end
 
+
+
+
+
+end
 
 
 #
